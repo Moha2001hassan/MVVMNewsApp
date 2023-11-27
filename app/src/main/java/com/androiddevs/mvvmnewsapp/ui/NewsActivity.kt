@@ -11,8 +11,6 @@ import com.androiddevs.mvvmnewsapp.repository.NewsRepository
 import kotlinx.android.synthetic.main.activity_news.bottomNavigationView
 import kotlinx.android.synthetic.main.activity_news.newsNavHostFragment
 
-// My API_KEY = 39accd08f91c4e4d895020d8e267ce37
-
 class NewsActivity : AppCompatActivity() {
 
     lateinit var viewModel: NewsViewModel

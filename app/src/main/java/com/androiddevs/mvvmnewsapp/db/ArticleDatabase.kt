@@ -15,16 +15,16 @@ import com.androiddevs.mvvmnewsapp.models.Article
 abstract class ArticleDatabase : RoomDatabase() {
     abstract fun getArticleDao(): ArticleDao
 
-    companion object{
+    companion object {
         @Volatile
-        private var instance : ArticleDatabase? = null
+        private var instance: ArticleDatabase? = null
         private val LOCK = Any()
 
-        operator fun invoke(context: Context) = instance ?: synchronized(LOCK){
-            instance ?: createDatabase(context).also{ instance = it }
+        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
+            instance ?: createDatabase(context).also { instance = it }
         }
 
-        private fun createDatabase(context: Context)=
+        private fun createDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
                 ArticleDatabase::class.java,
@@ -32,5 +32,4 @@ abstract class ArticleDatabase : RoomDatabase() {
             ).build()
 
     }
-
 }
